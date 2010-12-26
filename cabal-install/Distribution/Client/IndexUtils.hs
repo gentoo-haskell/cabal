@@ -186,7 +186,7 @@ readRepoIndex verbosity repo =
         case repoKind repo of
           Left  remoteRepo -> warn verbosity $
                "The package list for '" ++ remoteRepoName remoteRepo
-            ++ "' does not exist. Run 'cabal update' to download it."
+            ++ "' does not exist. Run 'hackport update' to download it."
           Right _localRepo -> warn verbosity $
                "The package list for the local repo '" ++ repoLocalDir repo
             ++ "' is missing. The repo is invalid."
@@ -199,8 +199,8 @@ readRepoIndex verbosity repo =
       when (dt >= isOldThreshold) $ case repoKind repo of
         Left  remoteRepo -> warn verbosity $
              "The package list for '" ++ remoteRepoName remoteRepo
-          ++ "' is " ++ show dt ++ " days old.\nRun "
-          ++ "'cabal update' to get the latest list of available packages."
+          ++ "' is " ++ show (tdDay diff)  ++ " days old.\nRun "
+          ++ "'hackport update' to get the latest list of available packages."
         Right _localRepo -> return ()
 
 -- | It is not necessary to call this, as the cache will be updated when the
@@ -442,7 +442,7 @@ packageIndexFromCache mkPkg hnd = accum mempty []
 
     interror msg = die $ "internal error when reading package index: " ++ msg
                       ++ "The package index or index cache is probably "
-                      ++ "corrupt. Running cabal update might fix it."
+                      ++ "corrupt. Running 'hackport update' might fix it."
 
 ------------------------------------------------------------------------
 -- Index cache data structure
