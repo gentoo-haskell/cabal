@@ -398,8 +398,8 @@ readRepoIndex verbosity repoCtxt repo idxState =
         RepoLocalNoIndex {} -> return ()
 
     errMissingPackageList repoRemote =
-         "The package list for '" ++ unRepoName (remoteRepoName repoRemote)
-      ++ "' does not exist. Run 'cabal update' to download it." ++ show repoRemote
+         "The package list for '" ++ (unRepoName (remoteRepoName repoRemote))
+      ++ "' does not exist. Run 'hackport update' to download it."
     errOutdatedPackageList repoRemote dt =
          "The package list for '" ++ unRepoName (remoteRepoName repoRemote)
       ++ "' is " ++ shows (floor dt :: Int) " days old.\nRun "
@@ -895,7 +895,7 @@ packageListFromCache verbosity mkPkg hnd Cache{..} = accum mempty [] mempty cach
     interror :: String -> IO a
     interror msg = die' verbosity $ "internal error when reading package index: " ++ msg
                       ++ "The package index or index cache is probably "
-                      ++ "corrupt. Running cabal update might fix it."
+                      ++ "corrupt. Running 'hackport update' might fix it."
 
 
 
