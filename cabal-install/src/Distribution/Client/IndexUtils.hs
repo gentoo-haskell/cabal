@@ -563,12 +563,17 @@ extractPkg verbosity entry blockNo = case Tar.entryContent entry of
 
 extractPrefs :: Tar.Entry -> Maybe [Dependency]
 extractPrefs entry = case Tar.entryContent entry of
+{-
+ -- get rid of hackage's preferred-versions
+ -- I'd like to have bleeding-edge packages in system and I don't fear of
+ -- broken packages with improper depends
   Tar.NormalFile content _
      | isPreferredVersions entrypath
     -> Just prefs
     where
       entrypath = Tar.entryPath entry
       prefs     = parsePreferredVersions content
+-}
   _ -> Nothing
 
 ------------------------------------------------------------------------
