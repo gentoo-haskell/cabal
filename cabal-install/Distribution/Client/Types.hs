@@ -29,8 +29,8 @@ import Distribution.Version
 
 import Data.Map (Map)
 import Network.URI (URI)
-
 import Data.ByteString.Lazy (ByteString)
+
 import Distribution.Compat.ExceptionCI
          ( SomeException )
 

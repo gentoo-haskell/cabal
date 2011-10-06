@@ -202,13 +202,8 @@ readRepoIndex verbosity repo =
       when (dt >= isOldThreshold) $ case repoKind repo of
         Left  remoteRepo -> warn verbosity $
              "The package list for '" ++ remoteRepoName remoteRepo
-<<<<<<< HEAD
-          ++ "' is " ++ show dt ++ " days old.\nRun "
-          ++ "'cabal update' to get the latest list of available packages."
-=======
-          ++ "' is " ++ show (tdDay diff)  ++ " days old.\nRun "
+          ++ "' is " ++ show dt  ++ " days old.\nRun "
           ++ "'hackport update' to get the latest list of available packages."
->>>>>>> Fix error messages with "cabal update" -> "hackport update" Same fix as marty.rosenberg@gmail.com once did for cabal-install-0.8.2, which we now are replacing.
         Right _localRepo -> return ()
 
 -- | It is not necessary to call this, as the cache will be updated when the
