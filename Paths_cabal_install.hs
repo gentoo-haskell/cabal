@@ -5,4 +5,4 @@ module Paths_cabal_install (
 import Data.Version (Version(..))
 
 version :: Version
-version = Version {versionBranch = [0,15,0], versionTags = []}
+version = Version {versionBranch = [0,17,0], versionTags = []}
