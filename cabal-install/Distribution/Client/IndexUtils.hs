@@ -76,8 +76,7 @@ import System.IO.Error (isDoesNotExistError)
 import Distribution.Compat.Exception (catchIO)
 import System.Directory
          ( getModificationTime, doesFileExist )
-import System.Time
-         ( getClockTime, diffClockTimes, normalizeTimeDiff, TimeDiff(tdDay) )
+import Distribution.Compat.Time
 
 
 getInstalledPackages :: Verbosity -> Compiler
@@ -196,14 +195,12 @@ readRepoIndex verbosity repo =
 
     isOldThreshold = 15 --days
     warnIfIndexIsOld indexFile = do
-      indexTime   <- getModificationTime indexFile
-      currentTime <- getClockTime
-      let diff = normalizeTimeDiff (diffClockTimes currentTime indexTime)
-      when (tdDay diff >= isOldThreshold) $ case repoKind repo of
+      dt <- getFileAge indexFile
+      when (dt >= isOldThreshold) $ case repoKind repo of
         Left  remoteRepo -> warn verbosity $
              "The package list for '" ++ remoteRepoName remoteRepo
-          ++ "' is " ++ show (tdDay diff)  ++ " days old.\nRun "
-          ++ "'hackport update' to get the latest list of available packages."
+          ++ "' is " ++ show dt ++ " days old.\nRun "
+          ++ "'cabal update' to get the latest list of available packages."
         Right _localRepo -> return ()
 
 -- | It is not necessary to call this, as the cache will be updated when the

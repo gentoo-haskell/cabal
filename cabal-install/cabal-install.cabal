@@ -6,7 +6,7 @@ Description:
     Haskell software by automating the fetching, configuration, compilation
     and installation of Haskell libraries and programs.
 homepage:           http://www.haskell.org/cabal/
-bug-reports:        http://hackage.haskell.org/trac/hackage/
+bug-reports:        https://github.com/haskell/cabal/issues
 License:            BSD3
 License-File:       LICENSE
 Author:             Lemmih <lemmih@gmail.com>
@@ -87,11 +87,13 @@ Executable cabal
         Distribution.Client.Install
         Distribution.Client.InstallPlan
         Distribution.Client.InstallSymlink
+        Distribution.Client.JobControl
         Distribution.Client.List
         Distribution.Client.PackageEnvironment
         Distribution.Client.PackageIndex
         Distribution.Client.PackageUtils
         Distribution.Client.ParseUtils
+        Distribution.Client.Sandbox
         Distribution.Client.Setup
         Distribution.Client.SetupWrapper
         Distribution.Client.SrcDist
@@ -106,6 +108,7 @@ Executable cabal
         Distribution.Client.Win32SelfUpgrade
         Distribution.Compat.Exception
         Distribution.Compat.FilePerms
+        Distribution.Compat.Time
         Paths_cabal_install
 
     build-depends: base     >= 2        && < 5,
@@ -138,6 +141,6 @@ Executable cabal
       build-depends: Win32 >= 2 && < 3
       cpp-options: -DWIN32
     else
-      build-depends: unix >= 1.0 && < 2.6
+      build-depends: unix >= 1.0 && < 2.7
     extensions: CPP, ForeignFunctionInterface
     c-sources: cbits/getnumcores.c
