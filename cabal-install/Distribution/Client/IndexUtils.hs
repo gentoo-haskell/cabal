@@ -199,8 +199,8 @@ readRepoIndex verbosity repo =
       when (dt >= isOldThreshold) $ case repoKind repo of
         Left  remoteRepo -> warn verbosity $
              "The package list for '" ++ remoteRepoName remoteRepo
-          ++ "' is " ++ show dt ++ " days old.\nRun "
-          ++ "'cabal update' to get the latest list of available packages."
+          ++ "' is " ++ show (tdDay diff)  ++ " days old.\nRun "
+          ++ "'hackport update' to get the latest list of available packages."
         Right _localRepo -> return ()
 
 -- | It is not necessary to call this, as the cache will be updated when the
