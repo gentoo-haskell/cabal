@@ -1,6 +1,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE NoMonoLocalBinds #-}
 
 module Distribution.Simple.Program.GHC (
     GhcOptions(..),
