@@ -3,7 +3,7 @@
 {-# LANGUAGE RankNTypes #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE ScopedTypeVariables #-}
-
+{-# LANGUAGE NoMonoLocalBinds #-}
 module Distribution.Simple.Program.GHC (
     GhcOptions(..),
     GhcMode(..),
