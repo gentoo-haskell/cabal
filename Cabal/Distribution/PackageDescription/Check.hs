@@ -1,3 +1,4 @@
+{-# LANGUAGE NoMonoLocalBinds #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Distribution.PackageDescription.Check

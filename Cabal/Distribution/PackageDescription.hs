@@ -1,3 +1,6 @@
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE NoMonoLocalBinds #-}
 -----------------------------------------------------------------------------
 -- |
 -- Module      :  Distribution.PackageDescription

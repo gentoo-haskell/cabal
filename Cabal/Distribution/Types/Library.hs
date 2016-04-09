@@ -1,5 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE DeriveGeneric      #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE NoMonoLocalBinds #-}
 
 module Distribution.Types.Library (
     Library(..),
