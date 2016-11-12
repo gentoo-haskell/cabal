@@ -1,4 +1,5 @@
 {-# LANGUAGE CPP #-}
+{-# LANGUAGE DoAndIfThenElse #-}
 
 module Distribution.Client.Security.DNS
     ( queryBootstrapMirrors
