@@ -1,6 +1,7 @@
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE ForeignFunctionInterface #-}
 {-# OPTIONS_HADDOCK hide #-}
 
 module Distribution.Compat.Environment
