@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoMonoLocalBinds #-}
 module Distribution.Parsec.ConfVar (parseConditionConfVar) where
 
 import           Distribution.Compat.Parsec                   (integral)
