@@ -15,6 +15,7 @@
 -- downloaded packages.
 -----------------------------------------------------------------------------
 module Distribution.Client.Config (
+    addInfoForKnownRepos,
     SavedConfig(..),
     loadConfig,
     getConfigFilePath,
