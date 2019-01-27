@@ -56,7 +56,8 @@ import Distribution.Types.CondTree
 import Distribution.Types.Condition
 import Distribution.Types.DependencyMap
 
-import qualified Data.Map as Map
+import qualified Data.Map.Strict as Map.Strict
+import qualified Data.Map.Lazy as Map
 import Data.Tree ( Tree(Node) )
 
 ------------------------------------------------------------------------------
@@ -219,7 +220,7 @@ resolveWithFlags dom enabled os arch impl constrs trees checkDeps =
     mp m@(Right _) _           = m
     mp _           m@(Right _) = m
     mp (Left xs)   (Left ys)   =
-        let union = Map.foldrWithKey (Map.insertWith' combine)
+        let union = Map.foldrWithKey (Map.Strict.insertWith combine)
                     (unDepMapUnion xs) (unDepMapUnion ys)
             combine x y = simplifyVersionRange $ unionVersionRanges x y
         in union `seq` Left (DepMapUnion union)
