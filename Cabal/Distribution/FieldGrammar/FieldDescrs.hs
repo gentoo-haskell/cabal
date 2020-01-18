@@ -3,6 +3,7 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE RankNTypes            #-}
 {-# LANGUAGE UndecidableInstances  #-}
+{-# LANGUAGE NoMonoLocalBinds      #-}
 module Distribution.FieldGrammar.FieldDescrs (
     FieldDescrs,
     fieldDescrPretty,
