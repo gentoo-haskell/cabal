@@ -1,6 +1,7 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE RankNTypes         #-}
+{-# LANGUAGE NoMonoLocalBinds   #-}
 
 module Distribution.Types.ModuleRenaming (
     ModuleRenaming(..),
