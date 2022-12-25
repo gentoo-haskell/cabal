@@ -5,4 +5,5 @@ module Paths_Cabal (
 import Data.Version (Version(..))
 
 version :: Version
-version = Version [2,1,0,0] []
+version = Version [3,8,1,0] []
+
