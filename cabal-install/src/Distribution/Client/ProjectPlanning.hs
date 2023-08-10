@@ -170,6 +170,9 @@ import           Text.PrettyPrint (text, hang, quotes, colon, vcat, ($$), fsep, 
 import qualified Text.PrettyPrint as Disp
 import qualified Data.Map as Map
 import qualified Data.Set as Set
+#if MIN_VERSION_mtl(2,3,0)
+import           Control.Monad
+#endif
 import           Control.Monad.State as State
 import           Control.Exception (assert)
 import           Data.List (groupBy, deleteBy)

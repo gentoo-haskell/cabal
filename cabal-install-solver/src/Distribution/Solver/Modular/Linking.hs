@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 
@@ -11,6 +12,9 @@ import Prelude ()
 import Distribution.Solver.Compat.Prelude hiding (get,put)
 
 import Control.Exception (assert)
+#if MIN_VERSION_mtl(2,3,0)
+import Control.Monad
+#endif
 import Control.Monad.Reader
 import Control.Monad.State
 import Data.Map ((!))

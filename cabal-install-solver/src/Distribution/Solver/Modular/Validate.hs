@@ -12,6 +12,9 @@ module Distribution.Solver.Modular.Validate (validateTree) where
 -- assignment returned by exploration of the tree should be a complete valid
 -- assignment, i.e., actually constitute a solution.
 
+#if MIN_VERSION_mtl(2,3,0)
+import Control.Monad
+#endif
 import Control.Monad.Reader
 import Data.Either (lefts)
 import Data.Function (on)
