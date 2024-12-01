@@ -6,9 +6,7 @@ module Distribution.Client.Version
 
 import Distribution.Version
 
-import qualified Paths_cabal_install as PackageInfo
-
 -- |
 -- This value determines the output of `cabal-install --version`.
 cabalInstallVersion :: Version
-cabalInstallVersion = mkVersion' PackageInfo.version
+cabalInstallVersion = mkVersion [3,10,3,0]

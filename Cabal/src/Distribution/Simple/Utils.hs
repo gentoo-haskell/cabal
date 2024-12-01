@@ -194,9 +194,7 @@ import Distribution.Compat.Stack
 import Distribution.Verbosity
 import Distribution.Types.PackageId
 
-#ifdef CURRENT_PACKAGE_KEY
-#define BOOTSTRAPPED_CABAL 1
-#endif
+#define CABAL_VERSION 3,10,3,0
 
 #ifdef BOOTSTRAPPED_CABAL
 import qualified Paths_Cabal (version)
